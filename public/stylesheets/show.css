@@ -1,0 +1,14 @@
+#box{
+    height: 70%;
+    width: 40%;
+    background-color: none;
+}
+.cardimg{
+    height: 20%;
+}
+#show{
+    display: flex;
+    object-fit: contain;
+    overflow: hidden;
+    flex-direction: row;
+}

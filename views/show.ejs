@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="/stylesheets/show.css">
+</head>
+<body>
+    <div id="nav" class="w-full px-10 py-3 flex bg-black justify-between">
+        <h3 class="ml-5 px-5">Pinterest</h3>
+        <div id="func">
+            <a id="profile" href="/">Profile</a><a id="feed" href="/feed">Feed</a><a id="logout" href="/logout">Logout</a>
+        </div>
+    </div>
+    <div id="show" class="flex flex-col overflow-hidden bg-none">
+        <% user.posts.forEach(function(elem){ %> 
+            <div class="card mt-5 ml-4" style="width: 10rem;">
+                <img id="imgcard" src="/images/uploads/<%= elem.image %>" class="height: 18rem">
+                <div class="card-body">
+                  <p class="card-text"><%= elem.title %></p>
+                  <p class="card-text"><%= elem.description %></p>
+                </div>
+              </div>
+            <% }) %>
+    </div>  
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+</body>
+</html>
